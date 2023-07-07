@@ -12,6 +12,11 @@ dependencies {
 
 android {
     namespace "io.nlopez.smartlocation.rx"
-
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 
 }
