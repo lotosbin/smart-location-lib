@@ -1,0 +1,22 @@
+[versions]
+junit = "4.12"
+mockito = "2.0.86-beta"
+robolectric = "3.1"
+[libraries]
+junit = { module = "junit:junit", version.ref = "junit" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+robolectric-shadows = { module = "org.robolectric:robolectric-shadows", version.ref = "robolectric" }
+rxandroid = { module = "io.reactivex.rxjava2:rxandroid", version = "2.0.1" }
+rxjava = { module = "io.reactivex.rxjava2:rxjava", version = "2.1.5" }
+[bundles]
+test = [
+    "junit",
+    "mockito-core",
+    "robolectric",
+    "robolectric-shadows",
+]
+rx = [
+    "rxandroid",
+    "rxjava",
+]
