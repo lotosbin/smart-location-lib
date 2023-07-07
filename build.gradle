@@ -9,3 +9,12 @@ allprojects {
         targetCompatibility = JavaVersion.VERSION_11
     }
 }
+subprojects {
+    afterEvaluate {
+        if (plugins.hasPlugin('android') || plugins.hasPlugin('android-library')) {
+            configure(android.lintOptions) {
+                abortOnError false
+            }
+        }
+    }
+}

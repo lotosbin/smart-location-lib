@@ -6,13 +6,14 @@ android {
 
     defaultConfig {
         applicationId "io.nlopez.smartlocation"
-        targetSdkVersion 26
+        targetSdk 44
         versionCode 100
         versionName "1.0.0"
     }
 }
 
 dependencies {
+    implementation "androidx.core:core:1.10.1"
     implementation project(':library')
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'

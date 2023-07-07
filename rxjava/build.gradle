@@ -13,8 +13,5 @@ dependencies {
 android {
     namespace "io.nlopez.smartlocation.rx"
 
-    defaultConfig {
-        targetSdkVersion 26
-    }
 
 }
