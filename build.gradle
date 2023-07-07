@@ -1,14 +1,22 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id "base"
     id "maven-publish"
     id "com.android.application" version "8.0.2" apply false
     id "com.android.library" version "8.0.2" apply false
+    id "org.jetbrains.kotlin.android" version "1.6.21" apply false
 }
 group 'io.nlopez.smartlocation'
 allprojects {
     tasks.withType(JavaCompile).configureEach {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
+    }
+    tasks.withType(KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
     }
 }
 subprojects {
@@ -18,12 +26,6 @@ subprojects {
                 abortOnError false
             }
         }
-        publishing {
-            publications {
-                release(MavenPublication) {
-                    from components.release
-                }
-            }
-        }
+
     }
 }
